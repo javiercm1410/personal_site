@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../layouts/Layout.astro';
+// import H1 from '../components/H1.astro';
+// import Main from '../components/Main.astro';
+
+const projects = await getCollection("projects");
+console.log(projects);
+---
+
+<Layout title="Javier Carrillo">
+	<Main>
+		<H1 text="Projects | Javier Carrillo"/>
+		{projects.map(project => (
+			<a href={`/projects/${project.slug}`}>
+				<h2>{project.data.section}</h2>
+			</a>
+		))}
+	</Main>
+</Layout>

@@ -1,0 +1,46 @@
+---
+// import heroImage from '@public/hero.png';
+import Button from '@components/ui/Button.astro';
+import { Image } from 'astro:assets';
+---
+
+<section
+	data-testid="hearder"
+	class="flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
+>
+	<div class="mb-10 mt-10 space-y-10 flex flex-col items-center lg:mb-0 lg:w-1/2">
+		<div class=" mt-40">
+			<h1 class="mb-10 font-monospace text-left leading-[1.25] text-3xl text-white lg:text-5xl lg:leading-[1.25]">
+				Hello 👋!<br/>My name is <span class="text-sky-300">Javier Carrillo</span> and I'm a DevOps Engineer based in Santo Domingo 🇩🇴.
+			</h1>
+		</div>
+		<div class="mb-5">
+      <div class="text-3xl p-2 cursor-pointer flex items-center justify-center animate-bounce" id="scroll-arrow">
+        <span class="text-sky-300 text-4xl">↓</span>
+      </div>
+		</div>
+	</div>
+	<div data-testid="hero-img" class="mb-10 ml-10 flex w-1/2 items-center justify-center">
+		<Image
+			src={"/public/GoPet.png"}
+			alt="Coding girl"
+			format="png"
+			width={600}
+			height={400}
+			loading="eager"
+		/>
+	</div>
+</section>
+
+<script lang="ts">
+  const scrollArrow = document.getElementById('scroll-arrow');
+  
+  if (scrollArrow) {
+      scrollArrow.addEventListener('click', function () {
+          window.scrollTo({
+              top: window.innerHeight,
+              behavior: 'smooth',
+          });
+      });
+  }
+</script>
