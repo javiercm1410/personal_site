@@ -1,50 +1,46 @@
 ---
 import Button from '@components/ui/Button.astro';
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
+import '@styles/global.css';
 
 const menuitems = [
 	{
-		title: 'About',
-		path: '#about',
+		title: 'whoami',
+		path: '#whoami',
 	},
 	{
 		title: 'Projects',
 		path: '#projects',
 	},
   {
-		title: 'Experience',
-		path: '#experience',
-	},
+    title: 'Certifications',
+    path: '#certifications',
+  },
 	{
 		title: 'Contact',
 		path: '#contact',
 	},
-  {
-		title: 'Certifications',
-		path: '#certifications',
-	},
 ];
 ---
-<!-- TODO: Set Static NavBar -->
-<header data-testId="header" class="my-5 flex flex-col items-center justify-between lg:flex-row">
-	<Astronav>
-		<div class="flex w-full items-center justify-between lg:w-auto">
-			<Button size={'sm'} name="Download CV">Download CV</Button>
-			<div class="block lg:hidden">
-				<MenuIcon class="h-4 w-4 text-white" />
+<header data-testId="header" class="sticky bg-sky-900 top-0 my-5 flex flex-col items-center justify-between lg:flex-row z-50 faded-bottom-line">
+		<Astronav>
+			<div class="flex w-full items-center justify-between lg:w-auto mt-5 mb-3 ml-10">
+				<Button size={'sm'} name="Download CV">Download CV</Button>
+				<div class="block lg:hidden">
+					<MenuIcon class="h-4 w-4 text-white" />
+				</div>
 			</div>
-		</div>
-		<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
-			<ul class="flex flex-col lg:flex-row lg:gap-3">
-				{
-					menuitems.map((item) => (
-						<>
+			<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
+				<ul class="flex flex-col lg:flex-row lg:gap-3">
+					{
+						menuitems.map((item) => (
+							<>
 							<li>
 								<a
 									aria-label="navigation link"
 									href={item.path}
 									class="flex py-2  hover:text-orange text-white hover:text-sky-300 lg:px-3"
-								>
+									>
 									{item.title}
 								</a>
 							</li>
@@ -54,5 +50,4 @@ const menuitems = [
 			</ul>
 		</MenuItems>
 	</Astronav>
-
 </header>
