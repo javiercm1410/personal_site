@@ -1,5 +1,12 @@
 
 
+## [0.2.3](https://github.com/javiercm1410/personal_site/compare/v0.2.2...v0.2.3) (2024-10-05)
+
+
+### Miscellaneous
+
+* update bucket name ([82d2133](https://github.com/javiercm1410/personal_site/commit/82d21338307c24560cb2f7aec25cf74afc808722))
+
 ## [0.2.2](https://github.com/javiercm1410/personal_site/compare/v0.2.1...v0.2.2) (2024-10-05)
 
 
