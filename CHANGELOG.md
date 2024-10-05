@@ -1,5 +1,12 @@
 
 
+## [0.2.2](https://github.com/javiercm1410/personal_site/compare/v0.2.1...v0.2.2) (2024-10-05)
+
+
+### Miscellaneous
+
+* update image url ([9dfeaaf](https://github.com/javiercm1410/personal_site/commit/9dfeaaf7b7b5f7415d6c9299002a42500fa4d5dd))
+
 ## [0.2.1](https://github.com/javiercm1410/personal_site/compare/v0.2.0...v0.2.1) (2024-10-05)
 
 
