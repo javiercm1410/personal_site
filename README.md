@@ -61,3 +61,8 @@ Add pipelines to deploy to S3
 Use SST for infra deployments on AWS
 Moniotoring solution
 See blog post
+
+
+check commitlint
+check release-it
+check CI

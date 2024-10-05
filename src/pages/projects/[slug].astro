@@ -1,8 +1,7 @@
 ---
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection,  } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
-import H1 from '../../components/H1.astro'
-import Main from '../../components/Main.astro'
+import type { CollectionEntry } from "astro:content";
 
 export const getStaticPaths = async () => {
     const projects = await getCollection("projects")
@@ -30,8 +29,5 @@ const {Content} = await project.render();
 ---
 
 <Layout title={project.data.title}>
-	<Main>
-		<H1 text={project.data.title}/>
-        <Content/>
-	</Main>
+	lol
 </Layout>
