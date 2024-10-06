@@ -56,13 +56,10 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 TODO:
 
-Add automatic tag system and deployments
-Add pipelines to deploy to S3
-Use SST for infra deployments on AWS
 Moniotoring solution
 See blog post
 
-
-check commitlint
-check release-it
 check CI
+
+
+add env var for s3 bucket
