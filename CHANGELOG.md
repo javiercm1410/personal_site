@@ -1,5 +1,13 @@
 
 
+## [0.2.4](https://github.com/javiercm1410/personal_site/compare/v0.2.3...v0.2.4) (2024-10-06)
+
+
+### Miscellaneous
+
+* update references images ([acdf3f1](https://github.com/javiercm1410/personal_site/commit/acdf3f1e5258d7552250516f0ea5069729439cd7))
+* update url references ([3fbc19c](https://github.com/javiercm1410/personal_site/commit/3fbc19c95c11ee7fb99eb6092fe1d6af43520f51))
+
 ## [0.2.3](https://github.com/javiercm1410/personal_site/compare/v0.2.2...v0.2.3) (2024-10-05)
 
 
