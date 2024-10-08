@@ -4,10 +4,11 @@ interface Props {
 	block?: boolean;
 	style?: 'primary';
 	class?: string;
+	href?: string;
 	[x: string]: any;
 }
 
-const { size = 'md', style = 'primary', block, class: className, ...rest } = Astro.props;
+const { size = 'md', style = 'primary', block, class: className, href, ...rest } = Astro.props;
 
 const sizes = {
 	sm: 'px-4 py-1.5',
@@ -20,14 +21,31 @@ const styles = {
 };
 ---
 
-<button
-	{...rest}
-	class:list={[
-		'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-orange',
-		block && 'w-full',
-		sizes[size],
-		styles[style],
-		className,
-	]}
-	><slot />
-</button>
+{href ? (
+	<a
+		{...rest}
+		href={href}
+		class:list={[
+			'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-orange inline-block',
+			block && 'w-full',
+			sizes[size],
+			styles[style],
+			className,
+		]}
+	>
+		<slot />
+	</a>
+) : (
+	<button
+		{...rest}
+		class:list={[
+			'rounded-xl text-center transition focus-visible:ring-2 ring-offset-2 ring-orange',
+			block && 'w-full',
+			sizes[size],
+			styles[style],
+			className,
+		]}
+	>
+		<slot />
+	</button>
+)}
