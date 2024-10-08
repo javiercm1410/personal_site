@@ -1,5 +1,13 @@
 
 
+## [0.2.5](https://github.com/javiercm1410/personal_site/compare/v0.2.4...v0.2.5) (2024-10-08)
+
+
+### Miscellaneous
+
+* update navbar ([78feba0](https://github.com/javiercm1410/personal_site/commit/78feba0c6c64f83dc38a3e6d81c11fa6d913d530))
+* update URL components ([8e34426](https://github.com/javiercm1410/personal_site/commit/8e34426cf74f28472683c5a7b0c31a3461893a4d))
+
 ## [0.2.4](https://github.com/javiercm1410/personal_site/compare/v0.2.3...v0.2.4) (2024-10-06)
 
 
