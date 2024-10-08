@@ -56,10 +56,11 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 TODO:
 
+Change Font
+Change Buttons
+Update Div
+Update Header
+See blank spaces
 Moniotoring solution
 See blog post
-
-check CI
-
-
 add env var for s3 bucket
