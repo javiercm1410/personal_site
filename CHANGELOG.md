@@ -1,5 +1,12 @@
 
 
+## [0.3.0](https://github.com/javiercm1410/personal_site/compare/v0.2.6...v0.3.0) (2024-10-09)
+
+
+### Features
+
+* add certification section ([f65249a](https://github.com/javiercm1410/personal_site/commit/f65249aa894e365b9e29109cd924439f576798a6))
+
 ## [0.2.6](https://github.com/javiercm1410/personal_site/compare/v0.2.5...v0.2.6) (2024-10-09)
 
 ## [0.2.5](https://github.com/javiercm1410/personal_site/compare/v0.2.4...v0.2.5) (2024-10-08)
