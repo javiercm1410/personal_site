@@ -1,5 +1,7 @@
 
 
+## [0.2.6](https://github.com/javiercm1410/personal_site/compare/v0.2.5...v0.2.6) (2024-10-09)
+
 ## [0.2.5](https://github.com/javiercm1410/personal_site/compare/v0.2.4...v0.2.5) (2024-10-08)
 
 
