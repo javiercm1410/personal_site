@@ -64,3 +64,6 @@ See blank spaces
 Moniotoring solution
 See blog post
 add env var for s3 bucket
+add version to the footer
+Responsive daisy IU
+check views
