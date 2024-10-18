@@ -1,5 +1,12 @@
 
 
+## [0.3.1](https://github.com/javiercm1410/personal_site/compare/v0.3.0...v0.3.1) (2024-10-18)
+
+
+### Miscellaneous
+
+* fix navbar issues and update port ([fe28923](https://github.com/javiercm1410/personal_site/commit/fe28923d442bf827ec4eb02900113e08254073d9))
+
 ## [0.3.0](https://github.com/javiercm1410/personal_site/compare/v0.2.6...v0.3.0) (2024-10-09)
 
 
