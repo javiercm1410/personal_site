@@ -1,5 +1,12 @@
 
 
+## [0.3.2](https://github.com/javiercm1410/personal_site/compare/v0.3.1...v0.3.2) (2024-10-18)
+
+
+### Miscellaneous
+
+* update image to webp format ([8b27cb2](https://github.com/javiercm1410/personal_site/commit/8b27cb2934f0f34815fccff939bb73a80737624c))
+
 ## [0.3.1](https://github.com/javiercm1410/personal_site/compare/v0.3.0...v0.3.1) (2024-10-18)
 
 
