@@ -4,8 +4,11 @@ export default {
 	theme: {
 		extend: {
 			height: {
-				'screen': '0vh',  // Define screen height como 100% del viewport height (vh)
-			  }
+				'screen': '75vh',  // Define screen height como 100% del viewport height (vh)
+			  },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
 		},
 	},
 	plugins: [

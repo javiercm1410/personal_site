@@ -8,10 +8,6 @@ const menuitems = [
 		title: 'whoami',
 		path: '#whoami',
 	},
-	{
-		title: 'my-work',
-		path: '#projects',
-	},
   {
     title: 'certifications',
     path: '#certifications',
@@ -22,35 +18,35 @@ const menuitems = [
 	},
 ];
 ---
-<div class="sticky top-0 z-50">
-<header data-testId="header" class="bg-sky-900 mt-5 flex flex-col items-center justify-between lg:flex-row z-50">
-		<Astronav>
-      <div class="flex w-full items-center justify-between lg:w-auto mt-5 mb-3 ml-10">
-        <Button size={'sm'} href="https://s3.amazonaws.com/javiercarrillo.dev/public/JavierCarrillo_resume_en.pdf" name="Download CV">Get My Resume!</Button>
-				<div class="block lg:hidden">
-          <MenuIcon class="h-4 w-4 text-white" />
-				</div>
-			</div>
-			<MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
-				<ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item) => (
-              <>
-							<li>
-								<a
-									aria-label="navigation link"
-									href={item.path}
-									class="flex py-2  hover:text-orange text-white hover:text-sky-300 lg:px-3"
-									>
-									{item.title}
-								</a>
-							</li>
-						</>
-					))
-				}
-			</ul>
-		</MenuItems>
-	</Astronav>
+<header data-testId="header" class="sticky top-0 z-50 bg-sky-900">
+  <div class="container mx-auto">
+    <div class="flex flex-col items-center justify-between lg:flex-row py-4 mx-5">
+      <Astronav>
+        <div class="flex w-full items-center justify-between lg:w-auto">
+          <Button size={'sm'} href="https://s3.amazonaws.com/javiercarrillo.dev/public/JavierCarrillo_resume_en.pdf" name="Download CV">Get My Resume!</Button>
+          <div class="block lg:hidden">
+            <MenuIcon class="h-4 w-4 text-white" />
+          </div>
+        </div>
+        <MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
+          <ul class="flex flex-col lg:flex-row lg:gap-3">
+            {
+              menuitems.map((item) => (
+                <li>
+                  <a
+                    aria-label="navigation link"
+                    href={item.path}
+                    class="flex py-2 text-white hover:text-sky-300 lg:px-3"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </MenuItems>
+      </Astronav>
+    </div>
+  </div>
+  <div class="w-full h-px opacity-50 bg-[#69ccf9] rounded-[1px] flex justify-center">
 </header>
-<div class="w-10rem h-px opacity-50 bg-[#69ccf9] rounded-[1px] flex justify-center mb-5 z-50" />
-</div>

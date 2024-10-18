@@ -22,12 +22,10 @@ const { title, description="Javier's personal website", image="https://s3.amazon
 		<meta property="og:image" content={image}/>
 		<title>{title}</title>
 	</head>
-	<body class="mx-auto max-w-screen-xl bg-sky-900 px-5 font-sans text-white xs:text-[20px] md:text-[24px]">
+	<body class="mx-auto max-w-screen-xl bg-sky-900 px-5 font-montserrat text-white xs:text-[20px] md:text-[24px]">
 		<Navbar/>
 		<!-- <Header/> -->
-		<div class="h-screen mt-[30rem] space-y-[30rem] md:space-y-[60rem] lg:space-y-[65rem]">
-			<slot />
-		</div>
+		<slot />
 		<style is:global>
 			/* Improve Page speed */
 			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
