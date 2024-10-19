@@ -1,5 +1,12 @@
 
 
+## [0.5.0](https://github.com/javiercm1410/personal_site/compare/v0.4.0...v0.5.0) (2024-10-19)
+
+
+### Features
+
+* add footer ([aabbb1d](https://github.com/javiercm1410/personal_site/commit/aabbb1d22d70c584f09baa5948800a3abf6df4a8))
+
 ## [0.4.0](https://github.com/javiercm1410/personal_site/compare/v0.3.2...v0.4.0) (2024-10-19)
 
 
