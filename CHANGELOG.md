@@ -1,5 +1,22 @@
 
 
+## [0.4.0](https://github.com/javiercm1410/personal_site/compare/v0.3.2...v0.4.0) (2024-10-19)
+
+
+### Features
+
+* add see blog button ([53168fc](https://github.com/javiercm1410/personal_site/commit/53168fcba30f446e3e8262e57d9001231dfa1663))
+
+
+### Bug Fixes
+
+* update page responsiveness for small screens ([2abc6b4](https://github.com/javiercm1410/personal_site/commit/2abc6b4a03f833bef1e97c87df8f9c2b1c9fa770))
+
+
+### Miscellaneous
+
+* update readme ([ab59c5d](https://github.com/javiercm1410/personal_site/commit/ab59c5de840eb3bc8c6f2c1553be32788dc1c6b9))
+
 ## [0.3.2](https://github.com/javiercm1410/personal_site/compare/v0.3.1...v0.3.2) (2024-10-18)
 
 
