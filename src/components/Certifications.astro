@@ -1,7 +1,7 @@
 ---
 import Card from '@components/ui/Card.astro';
 
-const projects = [
+const certifications = [
 	{
 		url: "https://www.credly.com/badges/f2870ab4-63de-4698-9dc7-ae2ad5fd10d9/public_url",
 		alt: "foo",
@@ -34,7 +34,7 @@ const projects = [
 	<h2 class="font-montserrat mb-10 text-4xl text-sky-300 lg:text-6xl">certifications</h2>
 	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
 		{
-			projects.map((project) => (
+			certifications.map((project) => (
 				<Card
 					url={project.url}
 					title={project.title}
