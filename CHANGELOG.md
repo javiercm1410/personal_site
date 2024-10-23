@@ -1,5 +1,17 @@
 
 
+## [0.7.0](https://github.com/javiercm1410/personal_site/compare/v0.6.0...v0.7.0) (2024-10-23)
+
+
+### Features
+
+* create blog content and components ([763ed62](https://github.com/javiercm1410/personal_site/commit/763ed62c7da7b3b4100a7eb94742508afa769a10))
+
+
+### Miscellaneous
+
+* update go back button href ([e13f528](https://github.com/javiercm1410/personal_site/commit/e13f5281875210660623242a05ccb0ffc9641583))
+
 ## [0.6.0](https://github.com/javiercm1410/personal_site/compare/v0.5.0...v0.6.0) (2024-10-22)
 
 
