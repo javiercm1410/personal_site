@@ -1,5 +1,18 @@
 
 
+## [0.6.0](https://github.com/javiercm1410/personal_site/compare/v0.5.0...v0.6.0) (2024-10-22)
+
+
+### Features
+
+* add blog post ([0385575](https://github.com/javiercm1410/personal_site/commit/038557505544046ecaea7dca0011d7593cf101eb))
+
+
+### Miscellaneous
+
+* update package json ([94cc63f](https://github.com/javiercm1410/personal_site/commit/94cc63ff15597d3ef82ee90a99821734d03c0f55))
+* update vars ([2fd2c8a](https://github.com/javiercm1410/personal_site/commit/2fd2c8abd33ed2f735f8736c5cfb00081c9e4f74))
+
 ## [0.5.0](https://github.com/javiercm1410/personal_site/compare/v0.4.0...v0.5.0) (2024-10-19)
 
 
