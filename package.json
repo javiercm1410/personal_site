@@ -24,6 +24,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^19.2.2",
     "@release-it/conventional-changelog": "^8.0.1",
+    "@tailwindcss/typography": "^0.5.15",
     "commitlint": "^19.4.0",
     "daisyui": "^4.12.12",
     "eslint": "^9.12.0",

@@ -2,21 +2,30 @@
 import { getCollection } from "astro:content";
 import BlogLayout from '../layouts/BlogLayout.astro';
 import BlogPost from '@components/BlogPost.astro';
+import Contact from '@components/Contact.astro';
 
-
-// const pageTitle = "My Astro Learning Blog";
 const allPosts = await getCollection("posts");
-// console.log(blogs);
+allPosts.sort((a, b) => {
+  const dateA = new Date(a.data.date).getTime();
+  const dateB = new Date(b.data.date).getTime();
+  return dateB - dateA;
+});
 ---
 
 <BlogLayout title="Javier Carrillo">
-  <!-- <p>This is where I will post about my journey learning Astro.</p> -->
-  <ul>
-    {
-      allPosts.map((post) => (
-        // <BlogPost url={post.url} title={post.frontmatter.title} />)}
-        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
-      ))
-    }
-  </ul>
+  <div class="h-screen">
+    <ul>
+      {
+        allPosts.map((post) => (
+          <BlogPost 
+            url={`/posts/${post.slug}/`}
+            title={post.data.title}
+            description={post.data.description}
+            image={post.data.image.url}
+            alt={post.data.image.alt}/>
+        ))
+      }
+    </ul>
+  </div>
+  <Contact />
 </BlogLayout>

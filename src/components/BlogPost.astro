@@ -1,4 +1,29 @@
 ---
-const { title, url } = Astro.props
+const { title, url, description, image, alt } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+<section
+    data-testid="main"
+    id="main"
+    class="flex flex-wrap gap-6 mt-20 justify-center"
+>
+    <a 
+        href={url}
+        class="group flex flex-row w-full max-w-4xl h-48 bg-sky-950 border mb-6 font-montserrat border-gray-200 rounded-lg shadow overflow-hidden hover:scale-105 transition-transform duration-200"
+    >
+        <div class="w-64 h-full flex-shrink-0 overflow-hidden">
+            <img 
+                class="w-full h-full object-cover" 
+                src={image} 
+                alt={alt} 
+            />
+        </div>
+        <div class="p-6 flex flex-col justify-center flex-grow">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors">
+                {title}
+            </h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400 line-clamp-2">
+                {description}
+            </p>
+        </div>
+    </a>
+</section>
