@@ -1,5 +1,17 @@
 
 
+## [0.8.0](https://github.com/javiercm1410/personal_site/compare/v0.7.0...v0.8.0) (2024-10-28)
+
+
+### Features
+
+* add blog banner and update prose style ([f969ee6](https://github.com/javiercm1410/personal_site/commit/f969ee647f09304f2a927a2c832b5d8467c4c68f))
+
+
+### Miscellaneous
+
+* add bullet point ([af3c1dd](https://github.com/javiercm1410/personal_site/commit/af3c1dde0313cdf4e50f30a9ec9fab489850324f))
+
 ## [0.7.0](https://github.com/javiercm1410/personal_site/compare/v0.6.0...v0.7.0) (2024-10-23)
 
 
