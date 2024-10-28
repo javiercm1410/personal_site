@@ -17,6 +17,7 @@ banner:
 If you have been working on something for... (WIP)
 
 - what is consistency about?
+- is it worth it?
 - find something you love
 - enjoy the process
 
