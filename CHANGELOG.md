@@ -1,5 +1,14 @@
 
 
+## [0.8.1](https://github.com/javiercm1410/personal_site/compare/v0.8.0...v0.8.1) (2024-10-31)
+
+
+### Miscellaneous
+
+* add taskfile ([863af7d](https://github.com/javiercm1410/personal_site/commit/863af7df1b84731165ae0058b4354fd358705b99))
+* update banner component ([866a2eb](https://github.com/javiercm1410/personal_site/commit/866a2eb7b7ef26015d83cb1cac51af91b9751327))
+* update config and blog content ([828fba9](https://github.com/javiercm1410/personal_site/commit/828fba9ad8e0f1234c1b618be82d69d9c89e901b))
+
 ## [0.8.0](https://github.com/javiercm1410/personal_site/compare/v0.7.0...v0.8.0) (2024-10-28)
 
 
