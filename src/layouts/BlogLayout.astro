@@ -3,11 +3,9 @@ interface Props {
 	title: string;
 	description?: string;
 	image?: string;
-	blogBanner?: string;
-	blogAlt?: string;
 }
 
-const { title, description="Javier's personal blog", image="https://s3.amazonaws.com/javiercarrillo.dev/public/GoPet.png", blogBanner, blogAlt } = Astro.props;
+const { title, description="Javier's personal blog", image="https://s3.amazonaws.com/javiercarrillo.dev/public/GoPet.png" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,14 +20,7 @@ const { title, description="Javier's personal blog", image="https://s3.amazonaws
 		<title>{title}</title>
 	</head>
 	<body class="bg-sky-900 font-montserrat text-white xs:text-[20px] md:text-[24px]">
-		<img 
-			class="!w-full !max-w-none h-[25vh] object-cover" 
-			src={blogBanner}
-			alt={blogAlt}
-		/>
-		<div class="mx-auto max-w-screen-xl px-5">
-			<slot />
-		</div>
+		<slot />
 		<style is:global>
 			/* Improve Page speed */
 			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */

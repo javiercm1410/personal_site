@@ -3,6 +3,7 @@ import { getCollection,  } from "astro:content";
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import type { CollectionEntry } from "astro:content";
 import Prose from '@components/Prose.astro';
+import Banner from '@components/Banner.astro';
 import Contact from '@components/Contact.astro';
 
 export const getStaticPaths = async () => {
@@ -20,7 +21,8 @@ const {entry} = Astro.props;
 const {Content} = await entry.render();
 ---
 
-<BlogLayout title={entry.data.title} blogBanner={entry.data.banner.url} blogAlt={entry.data.banner.alt}>
+<BlogLayout title={entry.data.title}>
+    <Banner image={entry.data.image.url} alt={entry.data.image.alt} />
     <Prose >
         <Content />
     </Prose>
