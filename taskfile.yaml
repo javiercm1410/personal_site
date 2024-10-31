@@ -1,0 +1,25 @@
+version: '3'
+
+env:
+  PROJECT: 'leopardai'
+  # Kubernetes
+  K8S_CLUSTER: 'leopardai'
+  # AWS
+  AWS_REGION: 'us-east-1'
+  ECR_URL: '637423397986.dkr.ecr.us-east-1.amazonaws.com'
+  # Werf
+  WERF_NELM: '1'
+
+tasks:
+  # Tasks: Application
+  run:
+    desc: Runs the application using Node
+    cmds:
+      - npm run start
+
+  # Tasks: AWS
+  s3-cp:
+    desc: Authenticates to the remote AWS ECR repository using the AWS CLI.
+    cmds:
+      - aws s3 cp {{.IMAGE}} s3://{{.BUCKET}}/public/{{.IMAGE}}
+

@@ -6,6 +6,6 @@ Not much to see here (README WIP) 🤷🏽‍♂️
 
 - Moniotoring solution
 - See blog post
-- add env var for s3 bucket
 - See how to fetch latest version on footer
-- check views
+- check views (responsiveness)
+- check blog icons
