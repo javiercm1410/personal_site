@@ -1,5 +1,12 @@
 
 
+## [0.8.3](https://github.com/javiercm1410/personal_site/compare/v0.8.2...v0.8.3) (2024-11-05)
+
+
+### Bug Fixes
+
+* update s3 commands ([c4e020e](https://github.com/javiercm1410/personal_site/commit/c4e020ede047b0726111e3a5753e8e3ba5f6ebf7))
+
 ## [0.8.2](https://github.com/javiercm1410/personal_site/compare/v0.8.1...v0.8.2) (2024-11-05)
 
 
