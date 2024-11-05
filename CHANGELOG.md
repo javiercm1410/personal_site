@@ -1,5 +1,12 @@
 
 
+## [0.8.4](https://github.com/javiercm1410/personal_site/compare/v0.8.3...v0.8.4) (2024-11-05)
+
+
+### Miscellaneous
+
+* comment post content ([329f568](https://github.com/javiercm1410/personal_site/commit/329f568c782b9df5378f9d673d9dc2e826488abc))
+
 ## [0.8.3](https://github.com/javiercm1410/personal_site/compare/v0.8.2...v0.8.3) (2024-11-05)
 
 
