@@ -1,5 +1,12 @@
 
 
+## [0.8.2](https://github.com/javiercm1410/personal_site/compare/v0.8.1...v0.8.2) (2024-11-05)
+
+
+### Miscellaneous
+
+* fetch version from bucket ([410f0c9](https://github.com/javiercm1410/personal_site/commit/410f0c9c162d1a49688a56c5c0a8180b1776e093))
+
 ## [0.8.1](https://github.com/javiercm1410/personal_site/compare/v0.8.0...v0.8.1) (2024-10-31)
 
 
