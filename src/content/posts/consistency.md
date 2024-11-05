@@ -1,7 +1,7 @@
 ---
 section: life
 date: 2024/10/22
-title: consistency
+title: WIP
 description: inspiration and motivation to write this
 author: Javier Carrillo
 image:
@@ -9,14 +9,16 @@ image:
   alt: Consistency
 ---
 
-# Consistency
+# WIP
+<!-- # Consistency -->
 
-If you have been working on something for... (WIP)
+TBD
+<!-- If you have been working on something for... (WIP)
 
 - what is consistency about?
 - is it worth it?
 - find something you love
-- enjoy the process
+- enjoy the process -->
 
 ## Spreta sceleratus solis
 
