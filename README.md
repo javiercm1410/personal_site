@@ -5,7 +5,6 @@ Not much to see here (README WIP) 🤷🏽‍♂️
 ## TODO
 
 - Moniotoring solution
-- See blog post
-- See how to fetch latest version on footer
+- Create first post
 - check views (responsiveness)
 - check blog icons
