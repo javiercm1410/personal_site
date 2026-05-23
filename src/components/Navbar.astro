@@ -6,15 +6,19 @@ import '@styles/global.css';
 const menuitems = [
 	{
 		title: 'whoami',
-		path: '#whoami',
+		path: '/#whoami',
+	},
+	{
+		title: 'blog',
+		path: '/#blog',
 	},
   {
-    title: 'certifications',
-    path: '#certifications',
+    title: 'skills',
+    path: '/#skills',
   },
 	{
 		title: 'contact',
-		path: '#contact',
+		path: '/#contact',
 	},
   {
 		title: 'resume',
@@ -22,14 +26,14 @@ const menuitems = [
 	},
 ];
 ---
-<header data-testId="header" class="sticky top-0 z-50 bg-sky-900">
+<header data-testId="header" class="sticky top-0 z-50 bg-surface/80 backdrop-blur">
   <div class="container mx-auto">
     <div class="flex flex-col items-center justify-between lg:flex-row py-4 mx-5">
       <Astronav>
         <div class="flex w-full items-center justify-between lg:w-auto">
           <Button size={'sm'} href="/blog" name="blog">My blog!</Button>
           <div class="block lg:hidden">
-            <MenuIcon class="h-4 w-4 text-white" />
+            <MenuIcon class="h-4 w-4 text-on-surface" />
           </div>
         </div>
         <MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
@@ -40,7 +44,7 @@ const menuitems = [
                   <a
                     aria-label="navigation link"
                     href={item.path}
-                    class="flex py-2 text-white hover:text-sky-300 lg:px-3"
+                    class="flex py-2 text-on-surface hover:text-primary lg:px-3"
                   >
                     {item.title}
                   </a>
@@ -52,5 +56,5 @@ const menuitems = [
       </Astronav>
     </div>
   </div>
-  <div class="w-full h-px opacity-50 bg-[#69ccf9] rounded-[1px] flex justify-center">
+  <div class="w-full h-px opacity-50 bg-primary/40 rounded-[1px] flex justify-center">
 </header>

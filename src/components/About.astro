@@ -1,32 +1,29 @@
----
-import { Image } from 'astro:assets';
----
-
 <section
 	data-testid="whoami"
 	id="whoami"
-	class="mb-10 flex flex-col items-center justify-center lg:mb-0 lg:h-screen lg:flex-row"
+	class="relative z-10 mb-10 flex flex-col items-center justify-center lg:mb-0 lg:h-screen lg:flex-row"
 >
 	<div class="mb-10 flex w-full flex-col items-center justify-center lg:mb-0 lg:w-1/2">
-			<Image
-			src={"https://s3.amazonaws.com/javiercarrillo.dev/public/tools.webp"}
-			alt="Coding girl"
-			format="png"
-			width={600}
-			height={400}
+		<img
+			src="/images/generic-tools.svg"
+			alt="Abstract developer workspace illustration"
+			width="600"
+			height="400"
 			loading="eager"
-		  />
-		<span class="mb-6 ml-2 h-1 w-10 bg-orange"></span>
+		/>
+		<span class="mb-6 ml-2 h-1 w-10 bg-primary"></span>
 	</div>
 
-	<div class="w-full text-justify text-white lg:w-1/2">
-		<h2 class="font-montserrat text-2xl text-sky-300 lg:text-5xl">whoami</h2>
+	<div class="w-full text-justify text-on-surface lg:w-1/2">
+		<div class="rounded-lg border border-primary/20 bg-on-surface/[0.02] p-6 backdrop-blur-sm">
+			<h2 class="text-2xl text-primary text-glow lg:text-5xl">whoami</h2>
 
-		<p class="my-5">
-      I'm a DevOps Engineer with over two years of experience and a degree in Telematics Engineering from PUCMM.
-      My tech stack includes Go, Python, AWS, Terraform, Kubernetes, GitHub Actions, and  many more. I have a passion 
-      for building great CLI tools and making Friday deployments as smooth as possible 😁. In my free time I'm probably
-	  reading manga 📚, biking 🚴, or cooking up something fun in Go 👨‍🍳.
-		</p>
+			<p class="my-5 text-on-surface/90">
+	      I'm a DevOps Engineer with over two years of experience and a degree in Telematics Engineering from PUCMM.
+	      My tech stack includes Go, Python, AWS, Terraform, Kubernetes, GitHub Actions, and  many more. I have a passion
+	      for building great CLI tools and making Friday deployments as smooth as possible 😁. In my free time I'm probably
+		  reading manga 📚, biking 🚴, or cooking up something fun in Go 👨‍🍳.
+			</p>
+		</div>
 	</div>
 </section>

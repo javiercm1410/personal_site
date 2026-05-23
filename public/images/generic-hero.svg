@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Generic cloud architecture illustration</title>
+  <desc id="desc">Abstract cloud infrastructure nodes connected across a dark grid.</desc>
+  <rect width="900" height="620" rx="28" fill="#111116"/>
+  <g opacity=".16" stroke="#aac7ff">
+    <path d="M100 120h700M100 220h700M100 320h700M100 420h700M100 520h700"/>
+    <path d="M160 80v460M280 80v460M400 80v460M520 80v460M640 80v460M760 80v460"/>
+  </g>
+  <g fill="none" stroke="#64fd7d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M258 340h-42c-49 0-88-38-88-85 0-44 35-81 80-84 19-48 68-82 124-82 68 0 124 49 132 112 10-3 20-4 31-4 57 0 103 45 103 100 0 24-9 46-24 63"/>
+    <path d="M327 340h338c58 0 105-43 105-96 0-50-43-92-98-96-19-60-78-103-149-103-48 0-91 20-119 51"/>
+  </g>
+  <g stroke="#aac7ff" stroke-width="4" stroke-linecap="round">
+    <path d="M292 391h310M360 452h170M420 510h250"/>
+    <path d="M366 391v61M526 391v119M602 391v61M670 452v58"/>
+  </g>
+  <g>
+    <circle cx="292" cy="391" r="16" fill="#aac7ff"/>
+    <circle cx="366" cy="452" r="16" fill="#64fd7d"/>
+    <circle cx="526" cy="510" r="16" fill="#aac7ff"/>
+    <circle cx="602" cy="452" r="16" fill="#64fd7d"/>
+    <circle cx="670" cy="510" r="16" fill="#aac7ff"/>
+  </g>
+</svg>

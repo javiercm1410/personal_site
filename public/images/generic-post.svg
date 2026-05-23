@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Generic article thumbnail</title>
+  <desc id="desc">Abstract notes, nodes, and code lines for a work in progress article.</desc>
+  <rect width="1200" height="675" fill="#111116"/>
+  <circle cx="955" cy="135" r="210" fill="#aac7ff" opacity=".11"/>
+  <circle cx="205" cy="548" r="230" fill="#64fd7d" opacity=".08"/>
+  <rect x="135" y="112" width="930" height="451" rx="28" fill="#17171d" stroke="#aac7ff" stroke-opacity=".35" stroke-width="4"/>
+  <path d="M226 228h302M226 306h482M226 384h370M226 462h548" stroke="#e6e4ec" stroke-opacity=".72" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#64fd7d">
+    <circle cx="838" cy="246" r="22"/>
+    <circle cx="914" cy="334" r="22"/>
+    <circle cx="798" cy="428" r="22"/>
+  </g>
+  <path d="M838 246l76 88-116 94" fill="none" stroke="#aac7ff" stroke-width="8" stroke-linecap="round"/>
+</svg>

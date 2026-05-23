@@ -1,0 +1,90 @@
+---
+import Card from '@components/ui/Card.astro';
+import { Icon } from 'astro-icon/components';
+
+const expertise = [
+	{
+		icon: 'mdi:console-line',
+		title: 'Precision Logic',
+		description: 'IaC & Automation',
+	},
+	{
+		icon: 'mdi:brain',
+		title: 'Neural Ops',
+		description: 'AI Model Orchestration',
+	},
+	{
+		icon: 'mdi:cloud-check-outline',
+		title: 'Infinite Scale',
+		description: 'Kubernetes & Cloud Native',
+	},
+];
+
+const certifications = [
+	{
+		url: "https://www.credly.com/badges/f2870ab4-63de-4698-9dc7-ae2ad5fd10d9/public_url",
+		alt: "Generic certification badge placeholder",
+		title: "AWS",
+		image: "/images/generic-badge.svg",
+		description: "Certified Solutions Architect - Associate",
+	},
+	{
+		url: "https://www.credly.com/badges/e61b4dd9-4091-447a-ad6d-9ac6e02dc7bf/public_url",
+		alt: "Generic certification badge placeholder",
+		title: "CKA",
+		image: "/images/generic-badge.svg",
+		description: "Certified Kubernetes Administrator",
+	},
+	{
+		url: "https://www.credly.com/badges/ef60b132-260d-447e-b10f-10050ab63d72/public_url",
+		alt: "Generic certification badge placeholder",
+		title: "HashiCorp",
+		image: "/images/generic-badge.svg",
+		description: "Certified Terraform Associate (003)",
+	},
+];
+---
+
+<section
+	data-testid="skills"
+	id="skills"
+	class="relative z-10 mb-16 flex flex-col items-center justify-center px-4 lg:mb-24"
+>
+	<h2 class="mb-10 text-4xl text-primary text-glow lg:text-6xl">skills</h2>
+
+	<div class="mb-16 grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+		{
+			expertise.map((item) => (
+				<article class="flex flex-col items-center rounded-xl border border-primary/20 bg-on-surface/[0.03] p-8 text-center transition hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_25px_rgba(170,199,255,0.15)]">
+					<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+						<Icon name={item.icon} size={32} />
+					</div>
+					<h3 class="mb-2 text-xl text-on-surface lg:text-2xl">{item.title}</h3>
+					<p class="text-sm text-on-surface/70 lg:text-base">{item.description}</p>
+				</article>
+			))
+		}
+	</div>
+
+	<h3 class="mb-8 text-2xl text-on-surface/80 lg:text-3xl">certifications</h3>
+	<div class="mb-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+		{
+			certifications.map((project) => (
+				<Card
+					url={project.url}
+					title={project.title}
+					image={project.image}
+					description={project.description}
+					alt={project.alt}
+				/>
+			))
+		}
+	</div>
+	<a
+		href="https://www.credly.com/users/javier-carrillo-massih"
+		class="inline-flex items-center text-base text-primary transition hover:text-glow"
+		aria-label="link to credly"
+	>
+		View full certificate list here →
+	</a>
+</section>

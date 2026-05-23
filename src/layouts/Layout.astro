@@ -1,5 +1,6 @@
 ---
 import Navbar from '@components/Navbar.astro';
+import PageLoader from '@components/PageLoader.astro';
 // import { SEO } from 'astro-seo';
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 	image?: string;
 }
 
-const { title, description="Javier's personal website", image="https://s3.amazonaws.com/javiercarrillo.dev/public/GoPet.png" } = Astro.props;
+const { title, description="Javier's personal website", image="https://javiercarrillo.dev/images/generic-post.svg" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,11 +19,13 @@ const { title, description="Javier's personal website", image="https://s3.amazon
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
-		<link rel="icon" type="image/png" href="https://s3.amazonaws.com/javiercarrillo.dev/public/favicon.png" />
+		<link rel="icon" type="image/svg+xml" href="/images/site-icon.svg" />
 		<meta property="og:image" content={image}/>
 		<title>{title}</title>
 	</head>
-	<body class="mx-auto max-w-screen-xl bg-sky-900 px-5 font-montserrat text-white xs:text-[20px] md:text-[24px]">
+	<body class="relative mx-auto max-w-screen-xl bg-surface px-5 font-inter text-on-surface xs:text-[20px] md:text-[24px]">
+		<PageLoader />
+		<div class="grain-overlay"></div>
 		<Navbar/>
 		<!-- <Header/> -->
 		<slot />

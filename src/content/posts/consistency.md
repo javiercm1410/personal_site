@@ -5,8 +5,8 @@ title: WIP
 description: inspiration and motivation to write this
 author: Javier Carrillo
 image:
-  url: https://s3.amazonaws.com/javiercarrillo.dev/public/beetle_image.webp
-  alt: Consistency
+  url: /images/generic-post.svg
+  alt: Generic article thumbnail
 ---
 
 # WIP
@@ -46,7 +46,7 @@ luserit, repelli ultro **spernimus** prohibes, ait sunt!
 Sinit est etiam est suo depresso ignaro aequora, *ut facies*. *Avia* poplitibus
 non mediis stillabant abit, non Crete passis nec caecisque.
 
-![image info](https://howdouteach.wordpress.com/wp-content/uploads/2019/10/sisyphus-push-e1510280689620.jpg?w=840)
+![Generic article thumbnail](/images/generic-post.svg)
 
 
 - Clara et dare spernit cernere incerta pectora

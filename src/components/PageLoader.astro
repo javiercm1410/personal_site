@@ -1,0 +1,39 @@
+<div
+	id="page-loader"
+	class="page-loader"
+	aria-live="polite"
+	aria-label="Loading page"
+>
+	<p class="page-loader__eyebrow">~/ initializing-infrastructure-system-v4.0</p>
+	<p class="page-loader__text">Architecting intelligent cloud ecosystems.</p>
+</div>
+
+<script>
+	const loader = document.getElementById('page-loader');
+
+	if (loader) {
+		const minimumDuration = 3600;
+		const startedAt = performance.now();
+
+		document.documentElement.classList.add('is-page-loading');
+		document.body.classList.add('is-page-loading');
+
+		const hideLoader = () => {
+			const elapsed = performance.now() - startedAt;
+			const remaining = Math.max(0, minimumDuration - elapsed);
+
+			window.setTimeout(() => {
+				loader.classList.add('page-loader--hidden');
+				document.documentElement.classList.remove('is-page-loading');
+				document.body.classList.remove('is-page-loading');
+				loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+			}, remaining);
+		};
+
+		if (document.readyState === 'complete') {
+			hideLoader();
+		} else {
+			window.addEventListener('load', hideLoader, { once: true });
+		}
+	}
+</script>

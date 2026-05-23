@@ -7,7 +7,15 @@ export default {
 				'screen': '75vh',  // Define screen height como 100% del viewport height (vh)
 			  },
       fontFamily: {
+        inter: ['Inter', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
+      },
+      colors: {
+        surface: '#0e0e10',
+        'on-surface': '#e6e4ec',
+        primary: '#aac7ff',
+        'accent-cyan': '#2faad5',
+        'accent-green': '#64fd7d',
       },
 		},
 	},

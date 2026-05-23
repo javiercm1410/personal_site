@@ -1,0 +1,46 @@
+<section
+	data-testid="main" id="main"
+	class="relative z-10 flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
+>
+	<div class="mb-10 mt-10 flex flex-col items-center space-y-8 lg:mb-0 lg:w-1/2 lg:items-start lg:text-left">
+		<div class="mt-40 w-full">
+			<p class="mb-4 font-mono text-sm text-accent-green lg:text-base">
+				~/ initializing-infrastructure-system-v4.0
+			</p>
+			<h1 class="mb-6 leading-[1.2] text-4xl text-on-surface lg:text-6xl lg:leading-[1.15]">
+				The <span class="text-primary text-glow">Precision</span> Architect
+			</h1>
+			<p class="typing-cursor font-mono text-base text-on-surface/80 lg:text-lg">
+				Architecting intelligent cloud ecosystems.
+			</p>
+		</div>
+		<div class="mb-5">
+			<div class="text-3xl p-2 cursor-pointer flex items-center justify-center animate-bounce" id="scroll-arrow">
+				<span class="text-primary text-4xl">↓</span>
+			</div>
+		</div>
+	</div>
+	<div data-testid="hero-img" class="mb-10 ml-10 flex w-1/2 items-center justify-center">
+		<img
+			src="/images/generic-hero.svg"
+			alt="Abstract cloud architecture illustration"
+			width="600"
+			height="400"
+			loading="eager"
+			class="hidden sm:block max-w-full h-auto"
+		/>
+	</div>
+</section>
+
+<script>
+  const scrollArrow = document.getElementById('scroll-arrow');
+
+  if (scrollArrow) {
+      scrollArrow.addEventListener('click', function () {
+          window.scrollTo({
+              top: window.innerHeight*0.7,
+              behavior: 'smooth',
+          });
+      });
+  }
+</script>

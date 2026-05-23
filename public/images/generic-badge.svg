@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-labelledby="title desc">
+  <title id="title">Generic certification badge</title>
+  <desc id="desc">Abstract certification badge placeholder.</desc>
+  <rect width="520" height="520" rx="32" fill="#111116"/>
+  <path d="M260 72l153 88v176l-153 88-153-88V160z" fill="#17171d" stroke="#aac7ff" stroke-width="12"/>
+  <path d="M260 126l106 61v122l-106 61-106-61V187z" fill="#aac7ff" opacity=".12"/>
+  <path d="M178 267l55 55 116-130" fill="none" stroke="#64fd7d" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M164 430h192" stroke="#e6e4ec" stroke-opacity=".72" stroke-width="18" stroke-linecap="round"/>
+</svg>

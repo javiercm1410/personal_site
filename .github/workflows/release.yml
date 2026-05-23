@@ -44,7 +44,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
-      - name: 🚀 Upload binaries to S3
+      - name: 🫙 Upload content to S3
         run: |
           aws s3 sync ./dist ${BUCKET}
           aws s3 cp ./package.json ${BUCKET}

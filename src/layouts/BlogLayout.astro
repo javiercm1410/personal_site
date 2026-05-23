@@ -1,11 +1,13 @@
 ---
+import '@styles/global.css';
+
 interface Props {
 	title: string;
 	description?: string;
 	image?: string;
 }
 
-const { title, description="Javier's personal blog", image="https://s3.amazonaws.com/javiercarrillo.dev/public/GoPet.png" } = Astro.props;
+const { title, description="Javier's personal blog", image="https://javiercarrillo.dev/images/generic-post.svg" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,11 +17,12 @@ const { title, description="Javier's personal blog", image="https://s3.amazonaws
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
-		<link rel="icon" type="image/png" href="https://s3.amazonaws.com/javiercarrillo.dev/public/favicon.png" />
+		<link rel="icon" type="image/svg+xml" href="/images/site-icon.svg" />
 		<meta property="og:image" content={image}/>
 		<title>{title}</title>
 	</head>
-	<body class="bg-sky-900 font-montserrat text-white xs:text-[20px] md:text-[24px]">
+	<body class="relative mx-auto max-w-screen-xl bg-surface px-5 font-inter text-on-surface xs:text-[20px] md:text-[24px]">
+		<div class="grain-overlay"></div>
 		<slot />
 		<style is:global>
 			/* Improve Page speed */

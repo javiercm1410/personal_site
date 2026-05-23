@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const featured = allPosts
+	.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+	.slice(0, 3);
+---
+
+<section
+	data-testid="blog"
+	id="blog"
+	class="relative z-10 mb-16 flex flex-col items-center justify-center px-4 lg:mb-24"
+>
+	<h2 class="mb-4 text-3xl text-primary text-glow lg:text-5xl">blog / case studies</h2>
+	<p class="mb-10 text-center text-base text-on-surface/70 lg:text-lg">
+		Notes on infrastructure, automation, and the occasional existential crisis.
+	</p>
+
+	<div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+		{
+			featured.map((post) => (
+				<a
+					href={`/posts/${post.slug}/`}
+					class="group flex flex-col overflow-hidden rounded-xl border border-primary/20 bg-on-surface/[0.03] transition hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_25px_rgba(170,199,255,0.15)]"
+				>
+					<div class="relative aspect-[16/9] overflow-hidden">
+						<img
+							src={post.data.image.url}
+							alt={post.data.image.alt}
+							width="600"
+							height="340"
+							loading="lazy"
+							class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+						/>
+					</div>
+					<div class="flex flex-1 flex-col p-5">
+						<p class="mb-2 font-mono text-xs uppercase tracking-wider text-accent-green">
+							{post.data.section}
+						</p>
+						<h3 class="mb-2 text-xl text-on-surface group-hover:text-primary">{post.data.title}</h3>
+						<p class="text-sm text-on-surface/70">{post.data.description}</p>
+					</div>
+				</a>
+			))
+		}
+	</div>
+
+	<a
+		href="/blog"
+		class="mt-10 inline-flex items-center gap-2 text-base text-primary transition hover:text-glow"
+	>
+		View all posts →
+	</a>
+</section>
