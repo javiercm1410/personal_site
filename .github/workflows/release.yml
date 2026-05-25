@@ -38,13 +38,13 @@ jobs:
       - name: 📦 Install package dependencies using lockfile
         run: npm ci
 
-      - name: 📦 Build application
-        run: npm run build
-
       - name: 🚀 Run new version
         run: npx release-it --ci
         env:
           GITHUB_TOKEN: ${{ github.token }}
+
+      - name: 📦 Build application
+        run: npm run build
 
       - name: 🫙 Upload content to S3
         run: |
