@@ -1,5 +1,17 @@
 
 
+## [0.9.0](https://github.com/javiercm1410/personal_site/compare/v0.8.4...v0.9.0) (2026-05-25)
+
+
+### Features
+
+* refresh wip site experience ([75dd7ae](https://github.com/javiercm1410/personal_site/commit/75dd7aeaea67009112ec97b5f8f1bb99ac8b6168))
+
+
+### Miscellaneous
+
+* use github token for release workflow ([114052d](https://github.com/javiercm1410/personal_site/commit/114052d0a989956da74d9ab97b5e62cb720391eb))
+
 ## [0.8.4](https://github.com/javiercm1410/personal_site/compare/v0.8.3...v0.8.4) (2024-11-05)
 
 
