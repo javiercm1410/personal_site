@@ -1,5 +1,12 @@
 
 
+## [0.9.1](https://github.com/javiercm1410/personal_site/compare/v0.9.0...v0.9.1) (2026-05-25)
+
+
+### Miscellaneous
+
+* build release after version bump ([f78263f](https://github.com/javiercm1410/personal_site/commit/f78263f5a46cec146c15b71c523f2d5fcd51580e))
+
 ## [0.9.0](https://github.com/javiercm1410/personal_site/compare/v0.8.4...v0.9.0) (2026-05-25)
 
 
