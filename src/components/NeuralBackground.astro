@@ -13,7 +13,7 @@
     let elapsed = 0;
     let lastTime = 0;
     let paused = false;
-    type Neuron = { x: number; y: number; phase: number; speed: number; size: number };
+    type Neuron = { x: number; y: number; phase: number; speed: number; size: number; shape: number };
     let neurons: Neuron[] = [];
 
     function resize() {
@@ -32,7 +32,8 @@
         y: (((i * 0.41421356237 + 0.17) % 1) * 0.9 + 0.05) * height,
         phase: i * 2.39,
         speed: 0.16 + (i % 5) * 0.035,
-        size: i % 7 === 0 ? 2.5 : 1.5,
+        size: i % 7 === 0 ? 3 : 2,
+        shape: i % 4,
       }));
       draw();
     }
@@ -41,14 +42,38 @@
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
       const motion = !media.matches;
-      const positions = neurons.map(n => {
-        const baseX = n.x + (motion ? Math.sin(elapsed * n.speed + n.phase) * 15 : 0);
-        const baseY = n.y + (motion ? Math.cos(elapsed * n.speed * 0.8 + n.phase) * 12 : 0);
+      // Slowly morph between a constellation, nested orbits, and flowing waves.
+      const cycle = motion ? elapsed / 20 : 0;
+      const form = Math.floor(cycle) % 3;
+      const nextForm = (form + 1) % 3;
+      const transition = Math.max(0, ((cycle % 1) - 0.55) / 0.45);
+      const blend = transition * transition * (3 - 2 * transition);
+      const pointFor = (n: Neuron, i: number, pattern: number) => {
+        if (pattern === 1) {
+          const ring = i % 3;
+          const angle = Math.floor(i / 3) / Math.ceil(neurons.length / 3) * Math.PI * 2 + ring * 0.48;
+          const radius = 0.42 + ring * 0.29;
+          return { x: width * 0.5 + Math.cos(angle) * width * 0.43 * radius,
+                   y: height * 0.5 + Math.sin(angle) * height * 0.4 * radius };
+        }
+        if (pattern === 2) {
+          const lane = i % 3;
+          const u = Math.floor(i / 3) / Math.max(1, Math.ceil(neurons.length / 3) - 1);
+          return { x: width * (0.05 + u * 0.9),
+                   y: height * (0.5 + Math.sin(u * Math.PI * 3 + lane * 2.1) * 0.25) };
+        }
+        return { x: n.x, y: n.y };
+      };
+      const positions = neurons.map((n, i) => {
+        const a = pointFor(n, i, form);
+        const b = pointFor(n, i, nextForm);
+        const baseX = a.x + (b.x - a.x) * blend + (motion ? Math.sin(elapsed * n.speed + n.phase) * 15 : 0);
+        const baseY = a.y + (b.y - a.y) * blend + (motion ? Math.cos(elapsed * n.speed * 0.8 + n.phase) * 12 : 0);
         const dx = pointer.x - baseX;
         const dy = pointer.y - baseY;
         const distance = Math.hypot(dx, dy);
         const influence = motion ? Math.max(0, 1 - distance / 220) : 0;
-        return { x: baseX + dx * influence * 0.12, y: baseY + dy * influence * 0.12, influence, size: n.size };
+        return { x: baseX + dx * influence * 0.12, y: baseY + dy * influence * 0.12, influence, size: n.size, shape: n.shape };
       });
       const reach = width < 700 ? 135 : 180;
       for (let i = 0; i < positions.length; i++) {
@@ -64,11 +89,31 @@
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
         ctx.fillStyle = `rgba(${a.influence > 0.1 ? '136,215,160' : '170,199,255'},${0.3 + a.influence * 0.55})`;
-        ctx.beginPath(); ctx.arc(a.x, a.y, a.size + a.influence, 0, Math.PI * 2); ctx.fill();
+        const radius = a.size + a.influence * 2;
+        const shapePath = (r: number) => {
+          ctx.beginPath();
+          if (a.shape === 0) {
+            ctx.arc(a.x, a.y, r, 0, Math.PI * 2);
+          } else {
+            const sides = a.shape === 3 ? 6 : 4;
+            const rotation = a.shape === 1 ? Math.PI / 4 : 0;
+            for (let vertex = 0; vertex < sides; vertex++) {
+              const angle = vertex / sides * Math.PI * 2 + rotation;
+              const x = a.x + Math.cos(angle) * r;
+              const y = a.y + Math.sin(angle) * r;
+              if (vertex === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+          }
+        };
+        shapePath(radius);
+        if (a.shape === 0) ctx.fill();
+        else { ctx.strokeStyle = ctx.fillStyle; ctx.lineWidth = 0.9; ctx.stroke(); }
         if (a.influence > 0.35) {
           ctx.strokeStyle = `rgba(136,215,160,${a.influence * 0.17})`;
           ctx.lineWidth = 0.7;
-          ctx.beginPath(); ctx.arc(a.x, a.y, a.size + 5 + a.influence * 3, 0, Math.PI * 2); ctx.stroke();
+          shapePath(radius + 5 + a.influence * 2);
+          ctx.stroke();
         }
       }
     }

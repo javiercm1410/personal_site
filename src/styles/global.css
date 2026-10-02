@@ -20,3 +20,5 @@ html{scroll-behavior:smooth;scroll-padding-top:7rem}body.portfolio-body{margin:0
 @media(max-width:450px){.cert-card{grid-template-columns:64px 1fr;gap:15px;padding:20px 17px}.cert-card .cert-badge{width:64px;height:64px}.previous-cert-card .cert-badge{width:70px;height:70px}}
 .neural-motion{font-size:14px}.portfolio-footer{padding-bottom:72px}
 @media(max-width:700px){.neural-motion{font-size:12px}}
+
+.project-status{font:12px var(--mono);color:#e4b87c;border:1px solid #e4b87c40;border-radius:4px;padding:4px 8px;align-self:flex-start}.project-top{gap:10px}
