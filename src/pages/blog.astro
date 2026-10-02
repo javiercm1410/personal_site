@@ -1,5 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
+import BlogPost from '@components/BlogPost.astro';
 import Contact from '@components/Contact.astro';
+const posts = (await getCollection('posts', ({ data }) => !data.archived))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
-<Layout title="Notes | Javier Carrillo"><section class="notes-page"><p class="eyebrow">ENGINEERING NOTES</p><h1>Notes from the terminal.</h1><p>No finished articles are published here yet. You can explore my <a href="/#projects">personal projects</a> and their documentation on GitHub.</p></section><Contact/></Layout>
+<Layout title="Blog | Javier Carrillo" description="Notes on cloud infrastructure, platform engineering, automation, and software delivery.">
+  <section class="notes-page">
+    <p class="eyebrow">ENGINEERING BLOG</p><h1>Notes from the terminal.</h1>
+    <p class="blog-intro">Cloud infrastructure, platform engineering, and the decisions behind the work.</p>
+    <div class="blog-grid">{posts.map(post => <BlogPost url={`/posts/${post.slug}/`} {...post.data} />)}</div>
+  </section><Contact />
+</Layout>

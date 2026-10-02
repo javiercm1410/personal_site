@@ -1,5 +1,6 @@
 ---
 section: life
+archived: true
 date: 2024/10/22
 title: WIP
 description: inspiration and motivation to write this
