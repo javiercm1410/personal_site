@@ -11,9 +11,9 @@ Not much to see here (README WIP) 🤷🏽‍♂️
 
 ## Hosting and publishing
 
-The refreshed portfolio is available on OpenAI Sites, while the production custom domain currently uses S3. GitHub does not automatically deploy the site. `.openai/hosting.json` links this source to the existing Site project. The custom domain `javiercarrillo.dev` currently uses the S3 fallback because Sites custom-domain routing remains unresolved. The refreshed version is also available on the assigned Sites hostname.
+Production is hosted in the existing AWS S3 bucket `javiercarrillo.dev`, behind Cloudflare. Publish validated `dist/` updates manually to S3 without deleting legacy objects. GitHub does not automatically deploy the site. OpenAI Sites work is paused; its existing project configuration is retained.
 
-The existing manually dispatched AWS Release workflow remains a fallback. Do not run it inadvertently: it publishes a release and syncs the build to the S3 bucket. A branch push or draft pull request does not trigger that workflow.
+The existing manually dispatched AWS Release workflow remains unchanged. Do not run it inadvertently: it publishes a release and syncs the build to S3. Branch pushes and pull requests do not trigger that workflow.
 
 Legacy pages, assets, and the résumé PDF retain their original paths through files in `public/`.
 
