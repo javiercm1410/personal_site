@@ -1,60 +1,9 @@
 ---
-import Button from '@components/ui/Button.astro';
-import { Astronav, MenuIcon, MenuItems } from 'astro-navbar';
 import '@styles/global.css';
-
-const menuitems = [
-	{
-		title: 'whoami',
-		path: '/#whoami',
-	},
-	{
-		title: 'blog',
-		path: '/#blog',
-	},
-  {
-    title: 'skills',
-    path: '/#skills',
-  },
-	{
-		title: 'contact',
-		path: '/#contact',
-	},
-  {
-		title: 'resume',
-		path: 'https://s3.amazonaws.com/javiercarrillo.dev/public/JavierCarrillo_resume_en.pdf',
-	},
-];
+const links = [{title:'About',path:'/#whoami'},{title:'Projects',path:'/#projects'},{title:'Expertise',path:'/#skills'},{title:'Credentials',path:'/#certifications'},{title:'Blog',path:'/blog/'}];
 ---
-<header data-testId="header" class="sticky top-0 z-50 bg-surface/80 backdrop-blur">
-  <div class="container mx-auto">
-    <div class="flex flex-col items-center justify-between lg:flex-row py-4 mx-5">
-      <Astronav>
-        <div class="flex w-full items-center justify-between lg:w-auto">
-          <Button size={'sm'} href="/blog" name="blog">My blog!</Button>
-          <div class="block lg:hidden">
-            <MenuIcon class="h-4 w-4 text-on-surface" />
-          </div>
-        </div>
-        <MenuItems class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto">
-          <ul class="flex flex-col lg:flex-row lg:gap-3">
-            {
-              menuitems.map((item) => (
-                <li>
-                  <a
-                    aria-label="navigation link"
-                    href={item.path}
-                    class="flex py-2 text-on-surface hover:text-primary lg:px-3"
-                  >
-                    {item.title}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </MenuItems>
-      </Astronav>
-    </div>
-  </div>
-  <div class="w-full h-px opacity-50 bg-primary/40 rounded-[1px] flex justify-center">
+<header class="site-header">
+<a href="/#main" class="wordmark" aria-label="Javier Carrillo home"><span class="monogram">jc<span>_</span></span><span class="wordmark-name">Javier Carrillo</span></a>
+<nav aria-label="Main navigation"><ul>{links.map(link=><li><a href={link.path}>{link.title}</a></li>)}</ul></nav>
+<a class="nav-contact" href="/#contact">Get in touch</a>
 </header>

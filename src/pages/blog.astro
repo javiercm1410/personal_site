@@ -1,31 +1,15 @@
 ---
-import { getCollection } from "astro:content";
-import BlogLayout from '../layouts/BlogLayout.astro';
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
 import BlogPost from '@components/BlogPost.astro';
 import Contact from '@components/Contact.astro';
-
-const allPosts = await getCollection("posts");
-allPosts.sort((a, b) => {
-  const dateA = new Date(a.data.date).getTime();
-  const dateB = new Date(b.data.date).getTime();
-  return dateB - dateA;
-});
+const posts = (await getCollection('posts', ({ data }) => !data.archived))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
-
-<BlogLayout title="Javier Carrillo">
-  <div class="h-screen">
-    <ul>
-      {
-        allPosts.map((post) => (
-          <BlogPost 
-            url={`/posts/${post.slug}/`}
-            title={post.data.title}
-            description={post.data.description}
-            image={post.data.image.url}
-            alt={post.data.image.alt}/>
-        ))
-      }
-    </ul>
-  </div>
-  <Contact />
-</BlogLayout>
+<Layout title="Blog | Javier Carrillo" description="Notes on cloud infrastructure, platform engineering, automation, and software delivery.">
+  <section class="notes-page">
+    <p class="eyebrow">ENGINEERING BLOG</p><h1>Notes from the terminal.</h1>
+    <p class="blog-intro">Cloud infrastructure, platform engineering, and the decisions behind the work.</p>
+    <div class="blog-grid">{posts.map(post => <BlogPost url={`/posts/${post.slug}/`} {...post.data} />)}</div>
+  </section><Contact />
+</Layout>
