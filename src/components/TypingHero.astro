@@ -1,46 +1,10 @@
-<section
-	data-testid="main" id="main"
-	class="relative z-10 flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
->
-	<div class="mb-10 mt-10 flex flex-col items-center space-y-8 lg:mb-0 lg:w-1/2 lg:items-start lg:text-left">
-		<div class="mt-40 w-full">
-			<p class="mb-4 font-mono text-sm text-accent-green lg:text-base">
-				~/ initializing-infrastructure-system-v4.0
-			</p>
-			<h1 class="mb-6 leading-[1.2] text-4xl text-on-surface lg:text-6xl lg:leading-[1.15]">
-				The <span class="text-primary text-glow">Precision</span> Architect
-			</h1>
-			<p class="typing-cursor font-mono text-base text-on-surface/80 lg:text-lg">
-				Architecting intelligent cloud ecosystems.
-			</p>
-		</div>
-		<div class="mb-5">
-			<div class="text-3xl p-2 cursor-pointer flex items-center justify-center animate-bounce" id="scroll-arrow">
-				<span class="text-primary text-4xl">↓</span>
-			</div>
-		</div>
-	</div>
-	<div data-testid="hero-img" class="mb-10 ml-10 flex w-1/2 items-center justify-center">
-		<img
-			src="/images/generic-hero.svg"
-			alt="Abstract cloud architecture illustration"
-			width="600"
-			height="400"
-			loading="eager"
-			class="hidden sm:block max-w-full h-auto"
-		/>
-	</div>
+<section id="main" class="portfolio-hero" aria-labelledby="hero-title">
+<div class="hero-copy"><p class="eyebrow">DEVOPS / PLATFORM ENGINEERING</p><h1 id="hero-title">Javier<br/><span>Carrillo.</span></h1>
+<p class="hero-lead">Cloud infrastructure.<br/>Practical automation.</p><p class="hero-description">I work with cloud platforms, Kubernetes, and infrastructure as code to make systems easier to deploy, operate, and maintain.</p>
+<div class="hero-actions"><a href="#projects" class="portfolio-button primary-button">Explore my projects</a><a href="/public/JavierCarrillo_resume_en.pdf" class="portfolio-button secondary-button" target="_blank" rel="noopener">View résumé <span class="file-tag">PDF</span></a></div>
+<p class="hero-location"><span aria-hidden="true">⌖</span> Santo Domingo, Dominican Republic</p></div>
+<div class="terminal-panel" aria-label="Profile summary"><div class="terminal-top"><span class="window-controls" aria-hidden="true"><i></i><i></i><i></i></span><span>javier / profile</span><span class="terminal-shell">zsh</span></div>
+<div class="terminal-body"><p class="command"><span>$</span> whoami</p><p class="terminal-role">DevOps &amp;<br/>Platform Engineer</p><p class="terminal-comment">// the tools behind the work</p>
+<dl class="terminal-details"><div><dt>cloud</dt><dd>AWS · Azure · GCP</dd></div><div><dt>platform</dt><dd>Kubernetes · Terraform</dd></div><div><dt>code</dt><dd>Go · Python</dd></div><div><dt>focus</dt><dd>Automation · Reliability</dd></div></dl>
+<div class="terminal-bottom"><span>$</span><span class="terminal-caret" aria-hidden="true"></span></div></div></div>
 </section>
-
-<script>
-  const scrollArrow = document.getElementById('scroll-arrow');
-
-  if (scrollArrow) {
-      scrollArrow.addEventListener('click', function () {
-          window.scrollTo({
-              top: window.innerHeight*0.7,
-              behavior: 'smooth',
-          });
-      });
-  }
-</script>

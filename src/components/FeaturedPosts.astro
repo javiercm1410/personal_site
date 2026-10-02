@@ -1,55 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-
-const allPosts = await getCollection('posts');
-const featured = allPosts
-	.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-	.slice(0, 3);
+const projects = [
+{number:'01',name:'Cloud Swap',category:'MULTI-CLOUD CLI',description:'A Go CLI for AWS, Azure, and Google Cloud login and context switching, with a searchable terminal interface.',tags:['Go','AWS / Azure / GCP'],url:'https://github.com/javiercm1410/cloud-swap',symbol:'>_'},
+{number:'02',name:'Gyro',category:'AWS IAM TOOLING',description:'A command-line tool for inspecting AWS IAM access keys and login profiles, with commands for listing users and keys.',tags:['Go','AWS IAM','Cobra'],url:'https://github.com/javiercm1410/gyro',symbol:'{ }'},
+{number:'03',name:'Skaffold + Helm',category:'DEPLOYMENT SANDBOX',description:'An experimental delivery setup for a Next.js app and PostgreSQL, using Skaffold modules, Helm charts, and Taskfile commands.',tags:['Kubernetes','Helm','Skaffold'],url:'https://github.com/javiercm1410/skaffold-helm-demo',symbol:'[ ]'}
+];
 ---
-
-<section
-	data-testid="blog"
-	id="blog"
-	class="relative z-10 mb-16 flex flex-col items-center justify-center px-4 lg:mb-24"
->
-	<h2 class="mb-4 text-3xl text-primary text-glow lg:text-5xl">blog / case studies</h2>
-	<p class="mb-10 text-center text-base text-on-surface/70 lg:text-lg">
-		Notes on infrastructure, automation, and the occasional existential crisis.
-	</p>
-
-	<div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		{
-			featured.map((post) => (
-				<a
-					href={`/posts/${post.slug}/`}
-					class="group flex flex-col overflow-hidden rounded-xl border border-primary/20 bg-on-surface/[0.03] transition hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_25px_rgba(170,199,255,0.15)]"
-				>
-					<div class="relative aspect-[16/9] overflow-hidden">
-						<img
-							src={post.data.image.url}
-							alt={post.data.image.alt}
-							width="600"
-							height="340"
-							loading="lazy"
-							class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-						/>
-					</div>
-					<div class="flex flex-1 flex-col p-5">
-						<p class="mb-2 font-mono text-xs uppercase tracking-wider text-accent-green">
-							{post.data.section}
-						</p>
-						<h3 class="mb-2 text-xl text-on-surface group-hover:text-primary">{post.data.title}</h3>
-						<p class="text-sm text-on-surface/70">{post.data.description}</p>
-					</div>
-				</a>
-			))
-		}
-	</div>
-
-	<a
-		href="/blog"
-		class="mt-10 inline-flex items-center gap-2 text-base text-primary transition hover:text-glow"
-	>
-		View all posts →
-	</a>
+<section id="projects" class="portfolio-section" aria-labelledby="projects-title"><div class="section-top"><div><p class="eyebrow">02 / PERSONAL PROJECTS</p><h2 id="projects-title">Tools and experiments.</h2></div><p class="section-description">A few things I’ve built to explore cloud workflows, command-line tools, and application delivery.</p></div>
+<div class="project-grid">{projects.map(p=><article class="project-card"><div class="project-top"><span>{p.number} / {p.category}</span><span class="project-symbol" aria-hidden="true">{p.symbol}</span></div><h3>{p.name}</h3><p>{p.description}</p><div class="project-tags">{p.tags.map(tag=><span>{tag}</span>)}</div><a class="project-link" href={p.url} target="_blank" rel="noopener" aria-label={`View ${p.name} repository`}>View repository</a></article>)}</div>
 </section>

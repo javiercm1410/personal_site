@@ -1,6 +1,5 @@
 ---
 import Navbar from '@components/Navbar.astro';
-import PageLoader from '@components/PageLoader.astro';
 // import { SEO } from 'astro-seo';
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 	image?: string;
 }
 
-const { title, description="Javier's personal website", image="https://javiercarrillo.dev/images/generic-post.svg" } = Astro.props;
+const { title, description="Javier Carrillo is a DevOps and Platform Engineer working with cloud infrastructure, Kubernetes, Terraform, and practical automation.", image="https://javiercarrillo.dev/images/generic-post.svg" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,16 +18,18 @@ const { title, description="Javier's personal website", image="https://javiercar
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/images/site-icon.svg" />
 		<meta property="og:image" content={image}/>
 		<title>{title}</title>
 	</head>
-	<body class="relative mx-auto max-w-screen-xl bg-surface px-5 font-inter text-on-surface xs:text-[20px] md:text-[24px]">
-		<PageLoader />
-		<div class="grain-overlay"></div>
+	<body class="portfolio-body">
+		<a class="skip-link" href="#page-content">Skip to content</a>
+
 		<Navbar/>
 		<!-- <Header/> -->
-		<slot />
+		<main id="page-content"><slot /></main>
 		<style is:global>
 			/* Improve Page speed */
 			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */

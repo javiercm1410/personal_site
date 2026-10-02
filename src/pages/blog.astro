@@ -1,31 +1,5 @@
 ---
-import { getCollection } from "astro:content";
-import BlogLayout from '../layouts/BlogLayout.astro';
-import BlogPost from '@components/BlogPost.astro';
+import Layout from '@layouts/Layout.astro';
 import Contact from '@components/Contact.astro';
-
-const allPosts = await getCollection("posts");
-allPosts.sort((a, b) => {
-  const dateA = new Date(a.data.date).getTime();
-  const dateB = new Date(b.data.date).getTime();
-  return dateB - dateA;
-});
 ---
-
-<BlogLayout title="Javier Carrillo">
-  <div class="h-screen">
-    <ul>
-      {
-        allPosts.map((post) => (
-          <BlogPost 
-            url={`/posts/${post.slug}/`}
-            title={post.data.title}
-            description={post.data.description}
-            image={post.data.image.url}
-            alt={post.data.image.alt}/>
-        ))
-      }
-    </ul>
-  </div>
-  <Contact />
-</BlogLayout>
+<Layout title="Notes | Javier Carrillo"><section class="notes-page"><p class="eyebrow">ENGINEERING NOTES</p><h1>Notes from the terminal.</h1><p>No finished articles are published here yet. You can explore my <a href="/#projects">personal projects</a> and their documentation on GitHub.</p></section><Contact/></Layout>
