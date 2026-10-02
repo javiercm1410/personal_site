@@ -1,0 +1,110 @@
+<div class="neural-background" aria-hidden="true"><canvas id="neural-canvas"></canvas></div>
+<button id="neural-motion" class="neural-motion" type="button" aria-pressed="false" hidden>Pause background motion</button>
+<script>
+  const canvas = document.querySelector<HTMLCanvasElement>('#neural-canvas');
+  const control = document.querySelector<HTMLButtonElement>('#neural-motion');
+  const ctx = canvas?.getContext('2d');
+  if (canvas && control && ctx) {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const pointer = { x: -1000, y: -1000 };
+    let width = 0;
+    let height = 0;
+    let frame = 0;
+    let elapsed = 0;
+    let lastTime = 0;
+    let paused = false;
+    type Neuron = { x: number; y: number; phase: number; speed: number; size: number };
+    let neurons: Neuron[] = [];
+
+    function resize() {
+      if (!canvas || !ctx) return;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      const count = Math.min(82, Math.max(24, Math.round(width * height / 19000)));
+      neurons = Array.from({ length: count }, (_, i) => ({
+        x: (((i * 0.61803398875) % 1) * 0.94 + 0.03) * width,
+        y: (((i * 0.41421356237 + 0.17) % 1) * 0.9 + 0.05) * height,
+        phase: i * 2.39,
+        speed: 0.16 + (i % 5) * 0.035,
+        size: i % 7 === 0 ? 2.5 : 1.5,
+      }));
+      draw();
+    }
+
+    function draw() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+      const motion = !media.matches;
+      const positions = neurons.map(n => {
+        const baseX = n.x + (motion ? Math.sin(elapsed * n.speed + n.phase) * 15 : 0);
+        const baseY = n.y + (motion ? Math.cos(elapsed * n.speed * 0.8 + n.phase) * 12 : 0);
+        const dx = pointer.x - baseX;
+        const dy = pointer.y - baseY;
+        const distance = Math.hypot(dx, dy);
+        const influence = motion ? Math.max(0, 1 - distance / 220) : 0;
+        return { x: baseX + dx * influence * 0.12, y: baseY + dy * influence * 0.12, influence, size: n.size };
+      });
+      const reach = width < 700 ? 135 : 180;
+      for (let i = 0; i < positions.length; i++) {
+        const a = positions[i];
+        for (let j = i + 1; j < positions.length; j++) {
+          const b = positions[j];
+          const distance = Math.hypot(a.x - b.x, a.y - b.y);
+          if (distance >= reach) continue;
+          const active = Math.max(a.influence, b.influence);
+          const alpha = (1 - distance / reach) * (0.18 + active * 0.36);
+          ctx.strokeStyle = `rgba(${active > 0.2 ? '136,215,160' : '170,199,255'},${alpha})`;
+          ctx.lineWidth = 0.7 + active * 0.4;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+        ctx.fillStyle = `rgba(${a.influence > 0.1 ? '136,215,160' : '170,199,255'},${0.3 + a.influence * 0.55})`;
+        ctx.beginPath(); ctx.arc(a.x, a.y, a.size + a.influence, 0, Math.PI * 2); ctx.fill();
+        if (a.influence > 0.35) {
+          ctx.strokeStyle = `rgba(136,215,160,${a.influence * 0.17})`;
+          ctx.lineWidth = 0.7;
+          ctx.beginPath(); ctx.arc(a.x, a.y, a.size + 5 + a.influence * 3, 0, Math.PI * 2); ctx.stroke();
+        }
+      }
+    }
+
+    function animate(time: number) {
+      frame = 0;
+      if (paused || media.matches || document.hidden) return;
+      if (time - lastTime >= 1000 / 30) {
+        elapsed += Math.min((time - (lastTime || time)) / 1000, 0.08);
+        lastTime = time;
+        draw();
+      }
+      frame = requestAnimationFrame(animate);
+    }
+
+    function syncMotion() {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      lastTime = 0;
+      control!.hidden = media.matches;
+      control!.setAttribute('aria-pressed', String(paused));
+      control!.textContent = paused ? 'Resume background motion' : 'Pause background motion';
+      draw();
+      if (!paused && !media.matches && !document.hidden) frame = requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('pointermove', event => {
+      if (event.pointerType === 'touch' || paused || media.matches) return;
+      pointer.x = event.clientX; pointer.y = event.clientY;
+    }, { passive: true });
+    document.documentElement.addEventListener('pointerleave', () => { pointer.x = -1000; pointer.y = -1000; });
+    window.addEventListener('resize', resize, { passive: true });
+    document.addEventListener('visibilitychange', syncMotion);
+    media.addEventListener('change', syncMotion);
+    control.addEventListener('click', () => { paused = !paused; syncMotion(); });
+    resize();
+    syncMotion();
+  }
+</script>

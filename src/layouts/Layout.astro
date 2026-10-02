@@ -1,5 +1,6 @@
 ---
 import Navbar from '@components/Navbar.astro';
+import NeuralBackground from '@components/NeuralBackground.astro';
 // import { SEO } from 'astro-seo';
 
 interface Props {
@@ -25,8 +26,9 @@ const { title, description="Javier Carrillo is a DevOps and Platform Engineer wo
 		<title>{title}</title>
 	</head>
 	<body class="portfolio-body">
+		<NeuralBackground />
 		<a class="skip-link" href="#page-content">Skip to content</a>
-
+		
 		<Navbar/>
 		<!-- <Header/> -->
 		<main id="page-content"><slot /></main>
